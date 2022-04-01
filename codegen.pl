@@ -78,7 +78,7 @@ depth_limited_search(CurrState, FinalState, SoFarStates, CurrDepth, MaxDepth, So
 	depth_limited_search(NextState, FinalState, NewSoFarStates, NewCurrDepth, MaxDepth, NewSoFarActions, Actions).
 
 codegen(InitialState, FinalState, Actions) :-
-	codegen(InitialState, FinalState, 1, Actions), !. % un-cat here (!) to get all the solutions %
+	codegen(InitialState, FinalState, 1, Actions), !. % un-cut here (!) to get all the solutions %
 
 codegen(InitialState, FinalState, MaxDepth, Actions) :-
 	depth_limited_search(InitialState, FinalState, [InitialState], 1, MaxDepth, [], Actions).
