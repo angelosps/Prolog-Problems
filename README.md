@@ -7,3 +7,4 @@ Prolog system used: [ECLiPSe](http://www.eclipseclp.org/).
 ### Codegen
 ### Domino
 ### Maximal Clique
+### Liars
