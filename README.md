@@ -8,3 +8,4 @@ Prolog system used: [ECLiPSe](http://www.eclipseclp.org/).
 ### Domino
 ### Maximal Clique
 ### Liars
+### Car Sequencing
