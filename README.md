@@ -9,3 +9,4 @@ Prolog system used: [ECLiPSe](http://www.eclipseclp.org/).
 ### Maximal Clique
 ### Liars
 ### Car Sequencing
+### Tents Puzzle
