@@ -75,6 +75,29 @@ Clique = [1, 107, 272]
 Size = 3
 ```
 
-## Liars
+## Liars Puzzle
+
+There is a group of friends, some of whom are always lying, while the others always tell the truth. All of them know about each other, whether they are liars or not. Each person makes a statement of the form "there are _at least K_ liars in the group". We implement a `liars/2` predicate which, when called with the list of numbers declared by each person as the _minimum number of liars in the group_ as the first argument, returns on the second argument a list indicating what each person in the group is, a liar or not, via an appropriate value, 1 or 0.
+
+Some usage examples are as follows.
+
+```
+?- liars([3, 2, 1, 4, 2], Liars).
+Liars = [1, 0, 0, 1, 0]
+
+?- liars([9, 1, 7, 1, 8, 3, 8, 9, 1, 3], Liars). 
+Liars = [1, 0, 1, 0, 1, 0, 1, 1, 0, 0]
+
+?- liars([12, 3, 9, 15, 8, 9, 0, 15, 9, 6, 14, 6, 3, 3, 9], Liars).
+Liars = [1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1]
+
+?- liars([2, 3, 3, 4], Liars).
+No
+
+?- liars([15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15], Liars).
+Liars = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+```
+
+
 ## Car Sequencing
 ## Tents Puzzle
