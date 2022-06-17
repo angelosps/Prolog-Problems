@@ -49,8 +49,11 @@ Size = 5
 ?- seed(8231), maxclq(120, 40, Clique, Size).  
 Clique = [12, 31, 54, 68, 73, 75, 92, 111]  
 Size = 8
+
+?- seed(1), maxclq(800, 2, Clique, Size).
+Clique = [1, 107, 272]
+Size = 3
 ```
-All test cases for this problem can be found [here]().
 
 ### Liars
 ### Car Sequencing
