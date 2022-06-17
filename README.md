@@ -9,8 +9,10 @@ Sequence encoding and decoding according to [Run Length](https://en.wikipedia.or
 ```
 ?- decode_rl([(a,3),(b,2),c,(d,4),e], L).
 L = [a,a,a,b,b,c,d,d,d,d,e]
+
 ?- decode_rl([(f(5,a),7)], L).
 L = [f(5,a),f(5,a),f(5,a),f(5,a),f(5,a),f(5,a),f(5,a)]
+
 ?- decode_rl([g(X),(h(Y),3),k(Z),(m(W),4),n(U)], L).
 L = [g(X),h(Y),h(Y),h(Y),k(Z),m(W),m(W),m(W),m(W),n(U)]
 ```
@@ -18,15 +20,40 @@ L = [g(X),h(Y),h(Y),h(Y),k(Z),m(W),m(W),m(W),m(W),n(U)]
 ```
 ?- encode_rl([a,a,a,b,b,c,d,d,d,d,e], L).  
 L = [(a,3),(b,2),c,(d,4),e]  
+
 ?- encode_rl([f(5,a),f(5,a),f(5,a),f(5,a),f(5,a),f(5,a),f(5,a)], L).  
 L = [(f(5,a),7)]  
+
 ?- encode_rl([g(X),h(Y),h(Y),h(Y),k(Z),m(W),m(W),m(W),m(W),n(U)], L).  
 L = [g(X),(h(Y),3),k(Z),(m(W),4),n(U)]
 ```
 
 ### Codegen
 ### Domino
+
 ### Maximal Clique
+
+The maximal [clique problem](https://en.wikipedia.org/wiki/Clique_problem) solved using Constraint Logic Programming (CLP).  
+The predicate `maxclq(N, D, Clique, Size)`, first creates a random graph (using `create_graph` as described below), and then finds the maximal clique for that graph.
+
+**Graph Generation:** The predicate `create_graph(N, D, G)` generates random graphs with **N** nodes and **D** density. 
+Density, represents (with a value up to 100) the percentage of edges present in the graph in relation to all possible edges.  
+
+Some usage examples are as follows.
+
+```
+You can call the predicate 
+
+?- seed(1), maxclq(8, 80, Clique, Size).
+Clique = [2, 4, 5, 6, 7]
+Size = 5
+
+?- seed(8231), maxclq(120, 40, Clique, Size).  
+Clique = [12, 31, 54, 68, 73, 75, 92, 111]  
+Size = 8
+```
+All test cases for this problem can be found [here]().
+
 ### Liars
 ### Car Sequencing
 ### Tents Puzzle
