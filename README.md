@@ -3,7 +3,7 @@
 A collection of problems solved using pure Prolog, or with CSP libraries of ECLiPSe such as `ic` and `branch_and_bound`.  
 Prolog system used: [ECLiPSe](http://www.eclipseclp.org/).
 
-### Run Length Encoding
+## Run Length Encoding
 Sequence encoding and decoding according to [Run Length](https://en.wikipedia.org/wiki/Run-length_encoding) standard. Some usage examples are as follows.    
 **Decoding**
 ```
@@ -28,7 +28,7 @@ L = [(f(5,a),7)]
 L = [g(X),(h(Y),3),k(Z),(m(W),4),n(U)]
 ```
 
-### Codegen
+## Codegen
 
 Suppose we have a processor N registers (R<sub>1</sub>, .., R<sub>N</sub>) that are connected in a ring structure.  
 That is, we can move the contents of register R<sub>i</sub> to register R<sub>i+1</sub>, for 1 < i < N, and R<sub>N</sub> to R<sub>1</sub> with the `move(i)`, for 1 < i < N, and `move(N)`, respectively. It can also swap the contents of registers R<sub>i</sub> and R<sub>j</sub> with the `swap(i,j)` instruction, where i < j. Now suppose we are given the initial contents of N registers, as well as the desired final contents. The task is to find the _shortest_ sequence of move and swap instructions that must be executed to achieve the desired transformation. Note that it is possible in the representation of the contents of registers to have, both in the initial and in the final state, the symbol \*, which means, for the initial state "we don't know what is contained in the register", and for the final state "we don't care what is contained in the register".
@@ -49,9 +49,9 @@ L = [move(1)]
 L = [move(2),swap(4,6),move(5),swap(4,5),swap(1,5),move(1)]
 ```
 
-### Domino
+## Domino
 
-### Maximal Clique
+## Maximal Clique
 
 The maximal [clique problem](https://en.wikipedia.org/wiki/Clique_problem) solved using Constraint Logic Programming (CLP).  
 The predicate `maxclq(N, D, Clique, Size)`, first creates a random graph (using `create_graph` as described below), and then finds the maximal clique for that graph.
@@ -75,6 +75,6 @@ Clique = [1, 107, 272]
 Size = 3
 ```
 
-### Liars
-### Car Sequencing
-### Tents Puzzle
+## Liars
+## Car Sequencing
+## Tents Puzzle
