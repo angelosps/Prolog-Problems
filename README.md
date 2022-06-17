@@ -100,4 +100,45 @@ Liars = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 
 ## Car Sequencing
+
 ## Tents Puzzle
+
+We have a rectangular field of given dimensions, let N x M. At certain positions (i,j) in the field, with i from 1 to N and j from 1 to M, there are K trees. We want to place in the field a number of tents at positions such that:
+* At least one of the adjacent positions of each tree, horizontally, vertically or diagonally, has a tent.
+* No two tents must be located in adjacent positions, neither horizontally, vertically nor diagonally.
+* There cannot be a tent in a location where there is a tree.
+* For some, not necessarily all, of the rows and columns of the field, maximum numbers of tents that may be present in the row or column, respectively.
+* The tents to be placed should be the minimum possible.
+
+We write a `tents/4` predicate, called `tents(RowTents, ColumnTents, Trees, Tents)`, where `RowTents` is a list of the desired total maximum number of tents per row, `ColumnTents` is a list of the desired total maximum number of tents per column, and `Trees` is a list of coordinates of the form Row-Column, where the trees are located.
+
+Some usage examples are as follows.
+
+```
+?- tents([0, -1, -1, 3, -1], [1, 1, -1, -1, 1], [1-2, 2-5, 3-3, 5-1, 5-5], Tents). 
+Tents=[2-3,3-5,5-2,5-4] --> ; 
+Tents=[2-3,3-5,4-2,5-4] --> ; 
+Tents=[2-3,3-5,4-1,5-4] --> ; 
+Tents=[2-2,3-5,4-1,5-4] --> ;
+...
+...
+
+?- tents([-1, -1, -1, 2, -1, -1, 2, 1],
+         [2, 1, -1, 1, 1, -1, 1, -1, -1, 1, 2, -1],
+         [1-4, 1-9, 1-12, 2-1, 2-5, 2-8, 3-1, 3-6, 3-8, 3-12,
+          4-5, 4-7, 4-11, 5-3, 5-9, 6-1, 6-7, 6-11, 7-5, 8-10], Tents).
+          
+          Tents = [2 - 4, 2 - 9, 2 - 12, 3 - 2, 4 - 6, 5 - 1, 6 - 3, 7 - 1, 7 - 6, 8 - 11] --> ; 
+          Tents = [2 - 4, 2 - 9, 2 - 12, 3 - 2, 4 - 6, 5 - 1, 6 - 3, 7 - 1, 7 - 6, 8 - 9] --> ; 
+          Tents = [2 - 4, 2 - 9, 2 - 12, 3 - 2, 4 - 6, 5 - 1, 6 - 3, 6 - 6, 7 - 1, 8 - 11] --> ;
+          ...
+          ...
+          
+?- tents([1, -1, -1, -1, -1, -1, 3, 1, -1, 1, 2, 2, 1],
+         [2, 1, -1, 1, 4, 1, 3, -1, 2, 1, 1, 0],
+         [2-3, 1-5, 5-4, 4-5, 7-7, 10-6, 2-2, 4-8, 8-5, 9-9,
+          1-8, 9-2, 3-3, 1-1, 9-8, 8-7, 10-10, 2-7, 8-6, 4-4, 9-1], Tents).
+Tents = [2 - 1, 2 - 4, 2 - 9, 3 - 7, 5 - 5, 8 - 8, 9 - 6, 10 - 2, 11 - 11] -->;
+...
+...
+```
