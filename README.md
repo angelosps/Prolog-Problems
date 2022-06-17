@@ -42,8 +42,6 @@ Density, represents (with a value up to 100) the percentage of edges present in 
 Some usage examples are as follows.
 
 ```
-You can call the predicate 
-
 ?- seed(1), maxclq(8, 80, Clique, Size).
 Clique = [2, 4, 5, 6, 7]
 Size = 5
