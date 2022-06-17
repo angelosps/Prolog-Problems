@@ -29,6 +29,26 @@ L = [g(X),(h(Y),3),k(Z),(m(W),4),n(U)]
 ```
 
 ### Codegen
+
+Suppose we have a processor N registers (R<sub>1</sub>, .., R<sub>N</sub>) that are connected in a ring structure.  
+That is, we can move the contents of register R<sub>i</sub> to register R<sub>i+1</sub>, for 1 < i < N, and R<sub>N</sub> to R<sub>1</sub> with the `move(i)`, for 1 < i < N, and `move(N)`, respectively. It can also swap the contents of registers R<sub>i</sub> and R<sub>j</sub> with the `swap(i,j)` instruction, where i < j. Now suppose we are given the initial contents of N registers, as well as the desired final contents. The task is to find the _shortest_ sequence of move and swap instructions that must be executed to achieve the desired transformation.
+
+Some usage examples are as follows.
+
+```
+?- codegen([a,b,c,d],[a,d,a,b],L).
+L = [move(2),move(1),swap(3,4),swap(2,3)]
+
+?- codegen([a,*,c],[c,a,*],L).
+L = [move(1),move(3)]
+
+?- codegen([a,b,c],[a,a,*],L).
+L = [move(1)]
+
+?- codegen([a,b,c,d,e,f],[f,f,b,e,a,e],L).
+L = [move(2),swap(4,6),move(5),swap(4,5),swap(1,5),move(1)]
+```
+
 ### Domino
 
 ### Maximal Clique
