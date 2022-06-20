@@ -54,11 +54,54 @@ L = [move(2),swap(4,6),move(5),swap(4,5),swap(1,5),move(1)]
 Given a set of dominos, we have to put them in N x M rectangle such that no domino is overlapped with any other and they exactly fit into the rectangle. Note that each domino may be placed in 4 different ways in the frame.  
 For example, the domino 
 
-![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5.png?raw=true)
+<p align="left">
+  <img src="https://github.com/angelosps/Prolog-Problems/blob/main/screenshots/domino2-5.png?raw=true" width="165">
+</p>
 
 may be placed as:
 
-![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5_4ways.png?raw=true)
+<p align="left">
+  <img src="https://github.com/angelosps/Prolog-Problems/blob/main/screenshots/domino2-5_4ways.png?raw=true" width="600">
+</p>
+
+**Sample test case**
+
+```
+%% Given the available dominos %%
+dominos([(0,0),(0,1),(0,2),(0,3),(0,4),(0,5),(0,6), 
+               (1,1),(1,2),(1,3),(1,4),(1,5),(1,6), 
+                     (2,2),(2,3),(2,4),(2,5),(2,6), 
+                           (3,3),(3,4),(3,5),(3,6), 
+                                 (4,4),(4,5),(4,6), 
+                                       (5,5),(5,6),
+                                             (6,6)]).
+                                             
+%% and the final state %%                                             
+frame([[3,1,2,6,6,1,2,2],
+       [3,4,1,5,3,0,3,6],
+       [5,6,6,1,2,4,5,0],
+       [5,6,4,1,3,3,0,0],
+       [6,1,0,6,3,2,4,0],
+       [4,1,5,2,4,3,5,5],
+       [4,1,0,2,4,5,2,0]]).
+       
+%% find a way to put the dominos in order to form the desired frame as stated above %% 
+?- put_dominos.
+3-1 2 6 6 1 2-2 
+    | | | |
+3-4 1 5 3 0 3 6
+            | | 
+5 6-6 1 2-4 5 0
+|     |
+5 6 4 1 3 3-0 0
+  | |   |     | 
+6 1 0 6 3 2 4 0 
+|     |   | |
+4 1-5 2 4 3 5 5
+        |     | 
+4-1 0-2 4 5-2 0
+
+```
 
 
 ## Maximal Clique
