@@ -54,11 +54,11 @@ L = [move(2),swap(4,6),move(5),swap(4,5),swap(1,5),move(1)]
 Given a set of dominos, we have to put them in N x M rectangle such that no domino is overlapped with any other and they exactly fit into the rectangle. Note that each domino may be placed in 4 different ways in the frame.  
 For example, the domino 
 
-![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5.jpg?raw=true)
+![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5.png?raw=true)
 
 may be placed as:
 
-![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5_4ways.jpg?raw=true)
+![alt text](https://github.com/angelosps/Prolog-Problems/screenshots/domino2-5_4ways.png?raw=true)
 
 
 ## Maximal Clique
