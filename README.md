@@ -100,7 +100,6 @@ frame([[3,1,2,6,6,1,2,2],
 4 1-5 2 4 3 5 5
         |     | 
 4-1 0-2 4 5-2 0
-
 ```
 
 
@@ -153,6 +152,34 @@ Liars = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 
 ## Car Sequencing
+
+A number of cars are to be produced on an assembly line where each car is customized with a specific set of options such as air-conditioning, sunroof, navigation, and so on. The assembly line moves through several workstations for installation of these options. The cars cannot be positioned randomly since each of these workstations have limited capacity and need time to set up the options as the assembly line is moving in front of the station. These capacity constraints are formalized using constraints of the form of K out of M,_(at most K cars in each M contiguous in the assembly line must require the option)_. The car sequencing problem is to determine a sequencing of the cars on the assembly line that satisfies the demand constraints for each set of car options and the capacity constraints for each workstation.
+
+```
+%% There are six classes. The 1st and 2nd classes will have one car each and the rest of them will have two cars each. %%
+classes([1,1,2,2,2,2]).
+
+%% There are five options. Each option is defined via a triad M/K/O, where M and K express the capacity constraint %%
+%% of the option (at most K cars in each M contiguous in the assembly line must require the option) and O %%
+%% is a list of 1 and 0, expressing whether the option is included in the corresponding class (value 1) or not (value 0). %%
+
+options([2/1/[1,0,0,0,1,1],
+         3/2/[0,0,1,1,0,1],
+         3/1/[1,0,0,0,1,0],
+         5/2/[1,1,0,1,0,0],
+         5/1/[0,0,1,0,0,0]]).
+         
+?- carseq(S).
+S = [1, 2, 6, 3, 5, 4, 4, 5, 3, 6] --> ;
+S = [1, 3, 6, 2, 5, 4, 3, 5, 4, 6] --> ;
+S = [1, 3, 6, 2, 6, 4, 5, 3, 4, 5] --> ;
+S = [5, 4, 3, 5, 4, 6, 2, 6, 3, 1] --> ;
+S = [6, 3, 5, 4, 4, 5, 3, 6, 2 ,1] --> ; 
+S = [6, 4, 5, 3, 4, 5, 2, 6, 3, 1] --> ;
+No
+```
+
+
 
 ## Tents Puzzle
 
