@@ -160,8 +160,8 @@ A number of cars are to be produced on an assembly line where each car is custom
 classes([1,1,2,2,2,2]).
 
 %% There are five options. Each option is defined via a triad M/K/O, where M and K express the capacity constraint %%
-%% of the option (at most K cars in each M contiguous in the assembly line must require the option) and O %%
-%% is a list of 1 and 0, expressing whether the option is included in the corresponding class (value 1) or not (value 0). %%
+%% of the option (at most K cars in each M contiguous in the assembly line must require the option) and 
+%% O is a list of 1 and 0, expressing whether the option is included in the corresponding class (1) or not (0). %%
 
 options([2/1/[1,0,0,0,1,1],
          3/2/[0,0,1,1,0,1],
