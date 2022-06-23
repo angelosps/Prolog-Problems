@@ -102,6 +102,13 @@ frame([[3,1,2,6,6,1,2,2],
 4-1 0-2 4 5-2 0
 ```
 
+**All test data are located in [/test-data](https://github.com/angelosps/Prolog-Problems/tree/main/test-data). 
+First you load the data into eclipse and then the `domino.pl` file, as follows.**
+
+```
+?- [domino_test_data].
+?- [domino].
+```
 
 ## Maximal Clique
 
