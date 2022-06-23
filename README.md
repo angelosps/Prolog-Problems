@@ -46,7 +46,7 @@ L = [move(1),move(3)]
 L = [move(1)]
 
 ?- codegen([a,b,c,d,e,f],[f,f,b,e,a,e],L).
-L = [move(2),swap(4,6),move(5),swap(4,5),swap(1,5),move(1)]
+L = [move(2),swap(1,4),move(6),move(1),move(5),swap(4,5)]
 ```
 
 ## Domino
