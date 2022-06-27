@@ -136,6 +136,8 @@ Clique = [1, 107, 272]
 Size = 3
 ```
 
+**I also include a *faster* implementation in the `maxclqfast.pl` file.**
+
 ## Liars Puzzle
 
 There is a group of friends, some of whom are always lying, while the others always tell the truth. All of them know about each other, whether they are liars or not. Each person makes a statement of the form "there are _at least K_ liars in the group". We implement a `liars/2` predicate which, when called with the list of numbers declared by each person as the _minimum number of liars in the group_ as the first argument, returns on the second argument a list indicating what each person in the group is, a liar or not, via an appropriate value, 1 or 0.
