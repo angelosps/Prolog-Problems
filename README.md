@@ -104,7 +104,7 @@ frame([[3,1,2,6,6,1,2,2],
 4-1 0-2 4 5-2 0
 ```
 
-**All test data are located in [/test-data](https://github.com/angelosps/Prolog-Problems/tree/main/test-data/domino). 
+**All test data are located in [/test-data/domino](https://github.com/angelosps/Prolog-Problems/tree/main/test-data/domino). 
 First you load the data into eclipse and then the `domino.pl` file, as follows.**
 
 ```
@@ -188,7 +188,7 @@ S = [6, 4, 5, 3, 4, 5, 2, 6, 3, 1] --> ;
 No
 ```
 
-**All test data are located in [/test-data](https://github.com/angelosps/Prolog-Problems/tree/main/test-data/carseq). 
+**All test data are located in [/test-data/carseq](https://github.com/angelosps/Prolog-Problems/tree/main/test-data/carseq). 
 First you load the data into eclipse and then the `carseq.pl` file, as follows.**
 
 ```
