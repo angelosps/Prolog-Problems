@@ -4,7 +4,7 @@ A collection of problems solved using pure Prolog, or with CSP libraries of ECLi
 Prolog system used: [ECLiPSe](http://www.eclipseclp.org/).
 
 ## Run Length Encoding
-Sequence encoding and decoding according to [Run Length](https://en.wikipedia.org/wiki/Run-length_encoding) standard. Some usage examples are as follows.    
+Sequence _encoding_ and _decoding_ according to [Run Length](https://en.wikipedia.org/wiki/Run-length_encoding) standard. Some usage examples are as follows.    
 **Decoding**
 ```
 ?- decode_rl([(a,3),(b,2),c,(d,4),e], L).
@@ -31,7 +31,7 @@ L = [g(X),(h(Y),3),k(Z),(m(W),4),n(U)]
 ## Codegen
 
 Suppose we have a processor of N registers (R<sub>1</sub>, .., R<sub>N</sub>) that are connected in a ring structure.  
-That is, we can move the contents of register R<sub>i</sub> to register R<sub>i+1</sub>, for 1 < i < N, and R<sub>N</sub> to R<sub>1</sub> with the `move(i)`, for 1 < i < N, and `move(N)`, respectively. It can also swap the contents of registers R<sub>i</sub> and R<sub>j</sub> with the `swap(i,j)` instruction, where i < j. Now suppose we are given the initial contents of N registers, as well as the desired final contents. The task is to find the _shortest_ sequence of move and swap instructions that must be executed to achieve the desired transformation. Note that it is possible in the representation of the contents of registers to have, both in the initial and in the final state, the symbol \*, which means, for the initial state "we don't know what is contained in the register", and for the final state "we don't care what is contained in the register".
+That is, we can move the contents of register R<sub>i</sub> to register R<sub>i+1</sub>, for 1 < i < N, and R<sub>N</sub> to R<sub>1</sub> with the `move(i)`, for 1 < i < N, and `move(N)`, respectively. It can also swap the contents of registers R<sub>i</sub> and R<sub>j</sub> with the `swap(i,j)` instruction, where i < j. Now suppose we are given the initial contents of N registers, as well as the desired final contents. The task is to find the _shortest_ sequence of `move` and `swap` instructions that must be executed to achieve the desired transformation. Note that it is possible in the representation of the contents of registers to have, both in the initial and in the final state, the symbol \*, which means, for the initial state "we don't know what is contained in the register", and for the final state "we don't care what is contained in the register".
 
 Some usage examples are as follows.
 
@@ -63,6 +63,8 @@ may be placed as:
 <p align="left">
   <img src="https://github.com/angelosps/Prolog-Problems/blob/main/screenshots/domino2-5_4ways.png?raw=true" width="600">
 </p>
+
+Given the dominos and the resulting frame, the goal is to find a way to place the dominos to obtain the desired frame.
 
 **Sample test case**
 
